@@ -4,51 +4,71 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Train Scheduler</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Firebase Refference -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <!-- Moment JS-->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- CSS Link-->
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css">
-</head>
-<body>
+  </head>
+<body background="./assets/images/dark-honeycomb/dark-honeycomb.png">
 
-<nav class="navbar navbar-dark">
+<!-- Header -->
+<div class="jumbotron">
     <h2>Any Time is Train Time</h2>
-    <br><br>
     <h3>Choo Choo. Chee Chee.</h3>
-</nav>
+</div>
 
+<!-- Containing Div -->
 <div class="container">
 
         <h4>Current Train Schedule</h4>
-        <form>
-                
-        </form>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency(min)</th>
+                <th scope="col">Next Arrival</th>
+                <th scope="col">Minutes Away</th>
+              </tr>
+            </thead>
+            <tbody id="train-scheduler"></div>
+            </tbody>
+          </table>
 
         <h4>Add Train</h4>
-        <form>
-                <div class="form-group">
-                  <label for="formGroupExampleInput">Train Name</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput">
-                </div>
-                <div class="form-group">
-                  <label for="formGroupExampleInput2">Destination</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput2">
-                </div>
-                <div class="form-group">
-                        <label for="formGroupExampleInput">First Train Time (HH:mm - military time)</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput">
-                      </div>
-                      <div class="form-group">
-                        <label for="formGroupExampleInput2">Frequency (min)</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2">
-                      </div>
-                      <button type="submit" class="btn">Submit</button>
-              </form>
-  
-</div>
+          
+        <!-- Form to store user inputs requesting train information -->
+          <form>
+            <div class="form-group" id="train-name">
+              <label for="Train Name">Train Name</label>
+              <input type="text" class="form-control" id="add-train-name">
+            </div>
 
-    <script src="main.js">
-    
-    
-    </script>
+            <div class="form-group" id="train-destination">
+              <label for="Destination">Destination</label>
+              <input type="text" class="form-control" id="add-destination">
+            </div>
+
+            <div class="form-group" id="train-time">
+              <label for="First Train Time (HH:mm - military time)">First Train Time (HH:mm - military time)</label>
+              <input type="text" class="form-control" id="add-train-time">
+            </div>
+
+            <div class="form-group" id="train-frequency">
+              <label for="Frequency (min)">Frequency (min)</label>
+              <input type="text" class="form-control" id="add-train-frequency">
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="addTrain">Submit</button>
+
+        </form>
+      </div>
 </body>
 </html>
